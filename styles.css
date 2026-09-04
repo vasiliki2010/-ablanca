@@ -9,6 +9,7 @@
   cursor: pointer;
   color: #a9c2ae;
 }
-.button {
+#start-reset {
   border-radius: 20px;
+  color: #a9c2ae;
 }
