@@ -1,7 +1,7 @@
 .box {
   background-color: rgb(249, 229, 205);
   height: 150px;
-  border-radius: 10px;
+  border-radius: 5px;
   margin: 10px;
   width: 300px;
 }
