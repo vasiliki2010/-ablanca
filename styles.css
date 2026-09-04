@@ -1,12 +1,13 @@
 .box {
   background-color: antiquewhite;
-  height: 200px;
+  height: 150px;
   border-radius: 5px;
+  margin: 10px;
   width: 300px;
 }
 .clickable {
   cursor: pointer;
-  color: #afc7b4;
+  color: #a9c2ae;
 }
 .button {
   border-radius: 20px;
@@ -16,15 +17,10 @@
   background-color: #0d3d17 !important;
 }
 body {
-  background-color: #dde0bd !important;
+  background-color: #dee0c9 !important;
 }
 
 #header {
   color: antiquewhite;
-}
-
-#container {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  font-family: "Lucida Calligraphy";
 }
