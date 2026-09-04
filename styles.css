@@ -7,9 +7,12 @@
 }
 .clickable {
   cursor: pointer;
-  color: #a9c2ae;
+  color: #0d3d17;
 }
 #start-reset {
   border-radius: 20px;
-  color: #a9c2ae;
+  color: #0d3d17;
+}
+.bg-success {
+  background-color: #0d3d17 !important;
 }
