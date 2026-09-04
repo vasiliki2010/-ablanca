@@ -1,6 +1,7 @@
 .box {
-  background-color: antiqueWhite;
+  background-color: rgb(180, 109, 17);
   height: 200px;
-  border-radious: 10px;
+  border-radius: 10px;
   margin: 10px;
+  width: 200px;
 }
