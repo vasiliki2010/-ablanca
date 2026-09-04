@@ -22,3 +22,15 @@ body {
 #header {
   background-color: #0d3d17 !important;
 }
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.box {
+  background: #fbe5ca;
+  border-radius: 14px;
+  min-height: 210px;
+}
