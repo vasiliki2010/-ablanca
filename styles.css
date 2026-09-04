@@ -1,9 +1,12 @@
 .box {
   background-color: antiquewhite;
-  height: 345px;
   border-radius: 5px;
   margin: 10px;
   width: 300px;
+  height: 200px;
+}
+#box1 {
+  height: 100px;
 }
 .clickable {
   cursor: pointer;
@@ -24,11 +27,16 @@ body {
   color: antiquewhite;
   font-family: "Lucida Calligraphy";
 }
+
+#main-container {
+  display: flex;
+}
 #container {
   display: flex;
 
   justify-content: space-between;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 5px;
 }
 #container1 {
   display: flex;
