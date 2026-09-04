@@ -17,15 +17,17 @@
   color: #0d3d17;
 }
 .bg-success {
-  background-color: #0d3d17 !important;
+  background-color: #a7ab2b !important;
 }
 body {
   background-color: #dee0c9 !important;
 }
 
-#header {
-  color: antiquewhite;
+.header {
+  background-color: #083b1d;
   font-family: "Lucida Calligraphy";
+  color: antiquewhite;
+  font-size: 20px;
 }
 
 #main-container {
