@@ -7,7 +7,7 @@
 }
 .clickable {
   cursor: pointer;
-  color: #0d3d17;
+  color: #a9c2ae;
 }
 .button {
   border-radius: 20px;
@@ -17,5 +17,10 @@
   background-color: #0d3d17 !important;
 }
 body {
-  background-color: antiquewhite;
+  background-color: #dee0c9 !important;
+}
+
+#header {
+  color: antiquewhite;
+}
 }
