@@ -7,8 +7,13 @@
 }
 .clickable {
   cursor: pointer;
-  color: #a9c2ae;
+  color: #0d3d17;
 }
 .button {
   border-radius: 20px;
+  color: #0d3d17;
+}
+.bg-success {
+  background-color: #0d3d17 !important;
+
 }
