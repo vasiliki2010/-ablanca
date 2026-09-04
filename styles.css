@@ -9,3 +9,6 @@
   cursor: pointer;
   color: #a9c2ae;
 }
+.button {
+  border-radius: 20px;
+}
