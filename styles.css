@@ -2,7 +2,6 @@
   background-color: antiquewhite;
   height: 200px;
   border-radius: 5px;
-  margin: 10px;
   width: 300px;
 }
 .clickable {
@@ -24,7 +23,8 @@ body {
   color: antiquewhite;
 }
 
-.container {
+#container {
   display: flex;
-  align-items: space-between;
+  justify-content: space-between;
+  gap: 20px;
 }
