@@ -16,6 +16,7 @@
 .bg-success {
   background-color: #0d3d17 !important;
 }
-h1 {
-  color: black;
+
+#header {
+  color: antiquewhite;
 }
