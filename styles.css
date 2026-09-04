@@ -1,5 +1,5 @@
 .box {
-  background-color: rgb(249, 229, 205);
+  background-color: antiquewhite;
   height: 150px;
   border-radius: 10px;
   margin: 10px;
@@ -7,7 +7,7 @@
 }
 .clickable {
   cursor: pointer;
-  color: #aac2af;
+  color: #a9c2ae;
 }
 .button {
   border-radius: 20px;
@@ -19,6 +19,7 @@
 body {
   background-color: #dee0c9 !important;
 }
+
 #header {
-  background-color: #0d3d17 !important;
+  color: antiquewhite;
 }
