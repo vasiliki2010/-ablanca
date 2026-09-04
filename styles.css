@@ -1,13 +1,13 @@
 .box {
   background-color: antiquewhite;
-  height: 150px;
+  height: 200px;
   border-radius: 5px;
   margin: 10px;
   width: 300px;
 }
 .clickable {
   cursor: pointer;
-  color: #a9c2ae;
+  color: #afc7b4;
 }
 .button {
   border-radius: 20px;
@@ -17,7 +17,7 @@
   background-color: #0d3d17 !important;
 }
 body {
-  background-color: #dee0c9 !important;
+  background-color: #dde0bd !important;
 }
 
 #header {
@@ -25,13 +25,6 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-}
-
-.box {
-  background: #fbe5ca;
-  border-radius: 14px;
-  min-height: 210px;
+  display: flex;
+  align-items: space-between;
 }
