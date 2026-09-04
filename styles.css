@@ -5,3 +5,6 @@
   margin: 10px;
   width: 300px;
 }
+.clicable {
+  cursor: pointer;
+}
