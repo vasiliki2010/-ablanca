@@ -2,11 +2,14 @@
   background-color: antiquewhite;
   border-radius: 5px;
   margin: 10px;
+  height: 250px;
   width: 300px;
-  height: 200px;
 }
 #box1 {
   height: 100px;
+  background-color: rgb(107, 157, 95);
+  color: rgb(242, 232, 232);
+  font-family: "Faculty Gliphic";
 }
 .clickable {
   cursor: pointer;
@@ -25,7 +28,7 @@ body {
 
 .header {
   background-color: #083b1d;
-  font-family: "Lucida Calligraphy";
+  font-family: "Niconne";
   color: antiquewhite;
   font-size: 20px;
 }
@@ -44,4 +47,29 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 20px;
+}
+.letter {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Faculty Gliphic";
+  color: #083b1d;
+}
+.instractions {
+  font-size: 16px;
+  text-align: center;
+  font-family: "Faculty Gliphic";
+  color: #083b1d;
+}
+.choise {
+  font-size: 19px;
+  text-align: center;
+  font-family: "Faculty Gliphic";
+  color: #083b1d;
+}
+.choises {
+  font-size: 16px;
+
+  font-family: "Faculty Gliphic";
+  color: #083b1d;
 }
