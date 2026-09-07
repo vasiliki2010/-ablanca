@@ -23,7 +23,7 @@
 }
 .step-progress .progress-bar {
   width: 0;
-  transition: width 20s linear;
+  transition: width 10s linear;
 }
 body {
   background-color: #dee0c9 !important;
@@ -107,6 +107,7 @@ body {
   text-align: center;
   cursor: pointer;
 }
+
 .choice-button:hover {
   background-color: #b8c0a5;
 }

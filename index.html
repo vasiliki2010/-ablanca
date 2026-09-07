@@ -184,5 +184,13 @@
         startProgress(0);
       });
     </script>
+    <script>
+      const choiceButtons = document.querySelectorAll(".choice-button");
+      choiceButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          alert(`You chose: ${button.textContent}`);
+        });
+      });
+    </script>
   </body>
 </html>
