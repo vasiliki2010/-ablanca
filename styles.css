@@ -22,6 +22,10 @@
 .bg-success {
   background-color: #a7ab2b !important;
 }
+.step-progress .progress-bar {
+  width: 0;
+  transition: width 20s linear;
+}
 body {
   background-color: #dee0c9 !important;
 }

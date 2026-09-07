@@ -30,7 +30,21 @@
           <div class="box">
             <p class="letter">Step 1 out of 10</p>
             <p class="instractions">
-              Stop! Put your phone down and take a pose</p>
+              Stop! Put your phone down and take a pose
+            </p>
+            <div
+              id="progress-bar-1"
+              class="progress step-progress"
+              role="progressbar"
+              aria-label="Step 1 timer"
+              aria-valuenow="0"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div
+                class="progress-bar progress-bar-striped progress-bar-animated"
+              ></div>
+            </div>
           </div>
 
           <div class="box">
@@ -40,17 +54,19 @@
           <div class="box">
             <p class="letter">Step 3 out of 10</p>
             <p class="instractions">Move your body</p>
-              <p class="instractions"> Stretch, stand up or walk around</p>
+            <p class="instractions">Stretch, stand up or walk around</p>
           </div>
           <div class="box">
             <p class="letter">Step 4 out of 10</p>
             <p class="instractions">
-              Eat, choose a fruit or your favourite healthy snack</p>
+              Eat, choose a fruit or your favourite healthy snack
+            </p>
           </div>
           <div class="box">
             <p class="letter">Step 5 out of 10</p>
             <p class="instractions">
-              Put cold water or an ice pack on your face </p>
+              Put cold water or an ice pack on your face
+            </p>
           </div>
           <div class="box">
             <p class="letter">Step 6 out of 10</p>
@@ -60,9 +76,7 @@
           </div>
           <div class="box">
             <p class="letter">Step 7 out of 10</p>
-            <p class="instractions">
-              Write down 3 things you are grateful for
-            </p>
+            <p class="instractions">Write down 3 things you are grateful for</p>
           </div>
           <div class="box">
             <p class="letter">Step 8 out of 10</p>
@@ -78,28 +92,27 @@
           </div>
           <div class="box">
             <p class="letter">What do you actually want to do next?</p>
-            <p class="choise"> Choose intentionally</p>  
-            <p>
-              <ol>
-                <li>
-                  <p class="choises">Continue what i was doing</p>
-                </li>
-                <li>
-                  <p class="choises">Take a longer break</p>
-                </li>
-                <li>
-                  <p class="choises">Get ready for bed</p>
-                </li>
-                <li>
-                  <p class="choises">Return to my phone intentionally</p>
-                </li>
-              </ol>
-            </p>      
+            <p class="choise">Choose intentionally</p>
+            <p></p>
+            <ol>
+              <li>
+                <p class="choises">Continue what i was doing</p>
+              </li>
+              <li>
+                <p class="choises">Take a longer break</p>
+              </li>
+              <li>
+                <p class="choises">Get ready for bed</p>
+              </li>
+              <li>
+                <p class="choises">Return to my phone intentionally</p>
+              </li>
+            </ol>
           </div>
         </div>
       </div>
     </div>
-    
+
     <script>
       src =
         "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js";
@@ -108,9 +121,63 @@
       crossorigin = "anonymous";
     </script>
     <script>
+      const stepBoxes = [
+        ...document.querySelectorAll("#container .box"),
+      ].filter((box) =>
+        box.querySelector(".letter")?.textContent.trim().startsWith("Step"),
+      );
+      const progressBars = stepBoxes.map((box, index) => {
+        const progressBar =
+          box.querySelector(".step-progress") || document.createElement("div");
+
+        if (!progressBar.classList.contains("step-progress")) {
+          progressBar.className = "progress step-progress";
+          progressBar.setAttribute("role", "progressbar");
+          progressBar.setAttribute("aria-label", `Step ${index + 1} timer`);
+          progressBar.setAttribute("aria-valuemin", "0");
+          progressBar.setAttribute("aria-valuemax", "100");
+          progressBar.innerHTML =
+            '<div class="progress-bar progress-bar-striped progress-bar-animated"></div>';
+          box.append(progressBar);
+        }
+
+        return progressBar;
+      });
+
+      const startProgress = (index) => {
+        if (index >= progressBars.length) return;
+
+        const progressBar = progressBars[index];
+        const progressFill = progressBar.querySelector(".progress-bar");
+        progressBar.setAttribute("aria-valuenow", "0");
+        progressFill.style.width = "0%";
+
+        requestAnimationFrame(() => {
+          progressBar.setAttribute("aria-valuenow", "100");
+          progressFill.style.width = "100%";
+        });
+      };
+
+      progressBars.forEach((progressBar, index) => {
+        progressBar
+          .querySelector(".progress-bar")
+          .addEventListener("transitionend", (event) => {
+            if (event.propertyName === "width") startProgress(index + 1);
+          });
+      });
+
       const startResetButton = document.getElementById("start-reset");
       startResetButton.addEventListener("click", function () {
-            });
+        progressBars.forEach((progressBar) => {
+          const progressFill = progressBar.querySelector(".progress-bar");
+          progressFill.style.transition = "none";
+          progressBar.setAttribute("aria-valuenow", "0");
+          progressFill.style.width = "0%";
+          progressFill.offsetWidth;
+          progressFill.style.transition = "";
+        });
+        startProgress(0);
+      });
     </script>
   </body>
 </html>
