@@ -23,7 +23,13 @@
 }
 .step-progress .progress-bar {
   width: 0;
-  transition: width 10s linear;
+  transition: width 10s linear !important;
+}
+.step-hidden {
+  display: none !important;
+}
+.step-progress {
+  margin-top: 12px;
 }
 body {
   background-color: #dee0c9 !important;
@@ -121,6 +127,10 @@ img {
   object-fit: cover;
 }
 
+.next-choice-hidden {
+  display: none !important;
+}
+
 @media (max-width: 1100px) {
   #container1 {
     grid-template-columns: 100px minmax(0, 1fr);
@@ -153,4 +163,7 @@ img {
   #container {
     grid-template-columns: 1fr;
   }
+}
+#choise-box {
+  height: 300px;
 }
