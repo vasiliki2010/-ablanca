@@ -58,14 +58,14 @@
           <div class="box">
             
             <p class="letter">Step 3 </p>
-             <p class="instractions" >Move your body. Strech, stand up or walk around
+             <p class="instractions" >Move. Strech, stand up or walk around
           </p>           
             <img src="step3.jpg" alt="Move your body" class="img" />
           </div>
           <div class="box">
 
             <p class="letter">Step 4 </p>
-                   <p class="instractions"> Eat. Choose a fruit or your favourite healthy snack</p>
+                   <p class="instractions"> Eat. Choose a fruit or a favourite healthy snack</p>
             <img src="step4.jpg" alt="Gum" class="img" />
           </div>
           <div class="box">
@@ -106,7 +106,7 @@
         </div>
       </div>
     </div>
-<div class="box">
+<div class="box" id="choise-box">
             
             <p class="letter">What do you want to do next?</p>
             <p class="choise"> Choose intentionally</p>  
@@ -190,6 +190,72 @@
         button.addEventListener("click", function () {
           alert(`You chose: ${button.textContent}`);
         });
+      });
+    </script>
+    <script>
+      const resetButton = document.getElementById("start-reset");
+      const steps = [...document.querySelectorAll("#container .box")].filter(
+        (box) => box.querySelector(".letter")?.textContent.trim().startsWith("Step")
+      );
+
+      let stepTimer;
+
+      steps.forEach((step) => step.classList.add("step-hidden"));
+
+      function showStep(index) {
+        if (index >= steps.length) return;
+
+        const step = steps[index];
+        const progress = step.querySelector(".progress-bar");
+
+        step.classList.remove("step-hidden");
+
+        if (progress) {
+          progress.style.transition = "none";
+          progress.style.width = "0%";
+          progress.offsetWidth;
+          progress.style.transition = "width 10s linear";
+          progress.style.width = "100%";
+        }
+
+        stepTimer = setTimeout(() => {
+          showStep(index + 1);
+        }, 10000);
+      }
+
+      resetButton.addEventListener("click", () => {
+        clearTimeout(stepTimer);
+
+        steps.forEach((step) => {
+          step.classList.add("step-hidden");
+
+          const progress = step.querySelector(".progress-bar");
+          if (progress) {
+            progress.style.transition = "none";
+            progress.style.width = "0%";
+          }
+        });
+
+        showStep(0);
+      });
+    </script>
+    <script>
+      const nextChoiceBox = [...document.querySelectorAll(".box")].find((box) =>
+        box.textContent.includes("What do you want to do next?")
+      );
+
+      let nextChoiceTimer;
+
+      nextChoiceBox?.classList.add("next-choice-hidden");
+
+      document.getElementById("start-reset").addEventListener("click", () => {
+        clearTimeout(nextChoiceTimer);
+        nextChoiceBox?.classList.add("next-choice-hidden");
+
+        // 10 βήματα × 10 δευτερόλεπτα
+        nextChoiceTimer = setTimeout(() => {
+          nextChoiceBox?.classList.remove("next-choice-hidden");
+        }, 100000);
       });
     </script>
   </body>
