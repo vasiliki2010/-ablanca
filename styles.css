@@ -23,7 +23,7 @@
 }
 .step-progress .progress-bar {
   width: 0;
-  background-color: #083b1d !important;
+  background-color: rgb(7, 106, 29) !important;
   transition: width 10s linear !important;
 }
 .step-hidden {
