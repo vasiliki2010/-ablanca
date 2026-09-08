@@ -29,12 +29,8 @@
 .step-hidden {
   display: none !important;
 }
-#youtube-player {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
+#reset-audio {
+  display: none;
 }
 .step-progress {
   margin-top: 12px;
