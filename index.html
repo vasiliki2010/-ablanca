@@ -118,8 +118,13 @@
               </ol>
             </p>      
           </div>
-          <html lang="el">
-            <div id="youtube-player" aria-hidden="true"></div>
+          <audio id="reset-audio" controls preload="auto">
+            <source
+              src="10 Minute Timer with Relaxing Music and Alarm [Zi25gUmfsio].webm"
+              type="audio/webm"
+            />
+            Your browser does not support WebM audio.
+          </audio>
     <script>
       src =
         "https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js";
@@ -174,8 +179,10 @@
       });
 
       const startResetButton = document.getElementById("start-reset");
+      const resetAudio = document.getElementById("reset-audio");
       startResetButton.addEventListener("click", function () {
-        if (youtubePlayer?.playVideo) youtubePlayer.playVideo();
+        resetAudio.currentTime = 0;
+        resetAudio.play().catch(() => {});
         progressBars.forEach((progressBar) => {
           const progressFill = progressBar.querySelector(".progress-bar");
           progressFill.style.transition = "none";
@@ -188,19 +195,6 @@
       });
     </script>
     <script>
-      let youtubePlayer;
-
-      function onYouTubeIframeAPIReady() {
-        youtubePlayer = new YT.Player("youtube-player", {
-          videoId: "Zi25gUmfsio",
-          playerVars: {
-            autoplay: 0,
-            controls: 0,
-            playsinline: 1,
-          },
-        });
-      }
-
       const choiceButtons = document.querySelectorAll(".choice-button");
       choiceButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -208,7 +202,6 @@
         });
       });
     </script>
-    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
       const resetButton = document.getElementById("start-reset");
       const steps = [...document.querySelectorAll("#container .box")].filter(
@@ -272,7 +265,7 @@
         // 10 βήματα × 10 δευτερόλεπτα
         nextChoiceTimer = setTimeout(() => {
           nextChoiceBox?.classList.remove("next-choice-hidden");
-          youtubePlayer?.stopVideo();
+          resetAudio.pause();
         }, 100000);
       });
     </script>
